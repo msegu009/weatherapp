@@ -5,7 +5,7 @@ export default class Days extends React.Component {
    render() {
      return (
        <div>
-               <h1>Today's Weather</h1>
+               <h1>Weather for {this.props.cityState}</h1>
                <div className="days">
                  <Day />
                  <Day />
