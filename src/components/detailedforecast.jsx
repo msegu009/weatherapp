@@ -1,16 +1,14 @@
-import React, {Component} from 'react'
+import React from 'react';
 import DayForecast from './dayforecast';
 import NightForecast from './nightforecast';
-
-class DetailedForecast extends Component {
- render() {
-return (
-  <div>
-    <DayForecast />
- <NightForecast /> 
-  </div> 
-)
-  }
-}
-
-export default DetailedForecast;
+  
+ export default class DetailedForecast extends React.Component {
+   render() {
+     return (
+           <div className="details">
+             <DayForecast />
+             <NightForecast />
+           </div>
+     )
+   }
+ }

@@ -1,15 +1,15 @@
-import React from 'react'
+import React from 'react';
+import '../css/weather-app.css';
 import Days from './days';
-import DetailedForecast from './detailedforecast'
-class WeatherApp extends React.Component {
- render() {
-return (
-  <div>
-    <Days />
-    <DetailedForecast />
-  </div> 
-)
-  }
-}
+import DetailedForecast from './detailedforecast';
 
-export default WeatherApp;
+export default class WeatherApp extends React.Component {
+   render() {
+     return (
+           <main>
+         <Days />
+         <DetailedForecast />
+           </main>
+     )
+   }
+ }
