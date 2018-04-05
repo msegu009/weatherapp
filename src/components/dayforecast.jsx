@@ -7,4 +7,4 @@ class DayForecast extends React.Component {
    )
  }
 }
-export default Daily Forecast;
+export default DayForecast;

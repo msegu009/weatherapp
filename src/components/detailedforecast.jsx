@@ -1,7 +1,8 @@
-import DayForecast from './DayForecast';
-import NightForecast from './NightForecast';
+import React, {Component} from 'react'
+import DayForecast from './dayforecast';
+import NightForecast from './nightforecast';
 
-class DetailedForecast extends React.Component {
+class DetailedForecast extends Component {
  render() {
 return (
   <div>
