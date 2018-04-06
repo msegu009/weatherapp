@@ -5,7 +5,7 @@
 const sample_city = [
         {
           temp_min: 75,
-          temp_max: 83,
+          temp_max: 93,
           main: "Clear",
           description: "Clear sky",
           icon: "01d",

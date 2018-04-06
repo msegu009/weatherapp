@@ -20,11 +20,18 @@ export default class WeatherApp extends React.Component {
         currentDay:{}
       }
     }
+
+    updateCurrentDay(day){
+   this.setState({
+     currentDay: day
+   });
+ }
     componentWillMount() {
-      this.setState({
-        city: sampleCity
-      });
-    }
+       this.setState({
+         city: sampleCity,
+         currentDay: sampleCity[0]
+       });
+ }
    render() {
     // console.log(this.props.match.params)
      return (
@@ -32,7 +39,7 @@ export default class WeatherApp extends React.Component {
             <Days cityState={ this.props.match.params.weatherId }
               data={ this.state }
             />
-            <DetailedForecast />
+            <DetailedForecast currentDay={ this.state.currentDay } />
            </main>
      )
    }
