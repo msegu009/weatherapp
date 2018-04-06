@@ -1,6 +1,22 @@
 import React from 'react';
 
  export default class Day extends React.Component {
+  
+  formatDate(datetime) {
+   let thisdate = new Date(datetime);
+   return thisdate.toLocaleDateString('en-US',
+     { 
+       month: 'short',
+       day: 'numeric'
+     });
+ }
+ getDayOfWeek(datetime) {
+   let thisdate = new Date(datetime);
+   return thisdate.toLocaleDateString('en-US',
+     {
+       weekday: 'short'
+     });
+ }
    render() {
      return (
            <div className="day">
