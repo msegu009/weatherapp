@@ -1,46 +1,41 @@
-import React from 'react';
-import '../css/weather-app.css';
-import Days from './days';
-import DetailedForecast from './detailedforecast';
-import sampleCity from '../sample-city';
-
-export default class WeatherApp extends React.Component {
-    today() {
-   return new Date().toLocaleDateString('en-US',
-      {
-        weekday: 'long',
-         month: 'short',
-         day: 'numeric'
-      });
-    }
-    constructor() {
-      super();
-      this.state = {
-        city: [],
-        currentDay:{}
-      }
-    }
-
-    updateCurrentDay(day){
-   this.setState({
-     currentDay: day
-   });
- }
-    componentWillMount() {
-       this.setState({
-         city: sampleCity,
-         currentDay: sampleCity[0]
-       });
- }
+ import React from 'react';
+ import '../css/weather-app.css';
+ import Days from './days';
+ import DetailedForecast from './detailedforecast';
+ import sampleCity from '../sample-city';
+ 
+ class WeatherApp extends React.Component {
+   constructor() {
+     super();
+     this.state = {
+       city: [],
+       currentDay:{}
+     }
+         this.updateCurrentDay = this.updateCurrentDay.bind(this);
+   }
+   componentWillMount() {
+     this.setState({
+           city: sampleCity,
+           currentDay: sampleCity[0]
+         });
+       }
+       updateCurrentDay(day){
+         this.setState({
+           currentDay: day
+     });
+   }
    render() {
-    // console.log(this.props.match.params)
      return (
-           <main>
-            <Days cityState={ this.props.match.params.weatherId }
-              data={ this.state }
-            />
-            <DetailedForecast currentDay={ this.state.currentDay } />
-           </main>
+       <main>
+               <Days 
+                 cityState={ this.props.match.params.weatherId } 
+                 data={ this.state } 
+                 updateCurrentDay={ this.updateCurrentDay }
+         />
+                 <DetailedForecast currentDay={ this.state.currentDay } />
+       </main>
      )
    }
  }
+ 
+ export default WeatherApp;
